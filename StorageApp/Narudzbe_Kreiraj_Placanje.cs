@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace StorageApp
 {
-    public partial class Form1 : Form
+    public partial class Narudzbe_Kreiraj_Placanje : UserControl
     {
-        public Form1()
+        public Narudzbe_Kreiraj_Placanje()
         {
             InitializeComponent();
-            
-            //this is GitTest!
-            //This is 2nd GitTest
-            //This is 3rd GitTest!
-            //This is Last GitTest!
-
-            //Test
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -29,12 +22,12 @@ namespace StorageApp
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void skladisteToolStripMenuItem_Click(object sender, EventArgs e)
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
 
         }
