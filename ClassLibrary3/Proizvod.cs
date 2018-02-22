@@ -5,8 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Logic
+
 {
-    class Class1
+    /// <summary>
+    /// Proizvodi
+    /// </summary>
+    public class Proizvodi
     {
+        //Prva Klasa. 
     }
 }

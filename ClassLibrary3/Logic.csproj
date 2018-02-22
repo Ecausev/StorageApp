@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Proizvod.cs" />
     <Compile Include="Dostava.cs">
       <DependentUpon>Warehouse_Model.tt</DependentUpon>
     </Compile>
