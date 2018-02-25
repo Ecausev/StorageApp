@@ -12,7 +12,7 @@ namespace Logic
     /// </summary>
     public class ProizvodiDB
     {
-
+        
         //public Proizvodi unosProizvoda(string naziv_P, int velicina_P, string spol_P, string detalj_P, int cijena_P )
         //{
         //    Proizvodi proizvod = new Proizvodi();
