@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="WarehouseDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="WarehouseDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Dostava">
           <Key>
             <PropertyRef Name="ID_Dostave" />
@@ -44,13 +44,13 @@
           <Property Name="Detalj" Type="varchar" MaxLength="50" />
           <Property Name="Cijena" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="Skladište">
+        <EntityType Name="Skladiste">
           <Key>
-            <PropertyRef Name="ID_Skladista" />
+            <PropertyRef Name="ID_Skladiste" />
           </Key>
-          <Property Name="ID_Skladista" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Skladiste" Type="int" Nullable="false" />
           <Property Name="ID_Proizvoda" Type="int" Nullable="false" />
-          <Property Name="Kolicina" Type="int" />
+          <Property Name="Kolicina" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_Narudzbe_Dostava">
           <End Role="Dostava" Type="Self.Dostava" Multiplicity="1" />
@@ -88,14 +88,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Skladište_Proizvodi">
+        <Association Name="FK_Skladiste_Proizvodi">
           <End Role="Proizvodi" Type="Self.Proizvodi" Multiplicity="1" />
-          <End Role="Skladište" Type="Self.Skladište" Multiplicity="*" />
+          <End Role="Skladiste" Type="Self.Skladiste" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Proizvodi">
               <PropertyRef Name="ID_Proizvoda" />
             </Principal>
-            <Dependent Role="Skladište">
+            <Dependent Role="Skladiste">
               <PropertyRef Name="ID_Proizvoda" />
             </Dependent>
           </ReferentialConstraint>
@@ -105,7 +105,7 @@
           <EntitySet Name="Kupci" EntityType="Self.Kupci" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Narudzbe" EntityType="Self.Narudzbe" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Proizvodi" EntityType="Self.Proizvodi" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Skladište" EntityType="Self.Skladište" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Skladiste" EntityType="Self.Skladiste" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Narudzbe_Dostava" Association="Self.FK_Narudzbe_Dostava">
             <End Role="Dostava" EntitySet="Dostava" />
             <End Role="Narudzbe" EntitySet="Narudzbe" />
@@ -118,13 +118,12 @@
             <End Role="Proizvodi" EntitySet="Proizvodi" />
             <End Role="Narudzbe" EntitySet="Narudzbe" />
           </AssociationSet>
-          <AssociationSet Name="FK_Skladište_Proizvodi" Association="Self.FK_Skladište_Proizvodi">
+          <AssociationSet Name="FK_Skladiste_Proizvodi" Association="Self.FK_Skladiste_Proizvodi">
             <End Role="Proizvodi" EntitySet="Proizvodi" />
-            <End Role="Skladište" EntitySet="Skladište" />
+            <End Role="Skladiste" EntitySet="Skladiste" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="WarehouseDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -172,16 +171,7 @@
           <Property Name="Detalj" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Cijena" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Narudzbe" Relationship="Self.FK_Narudzbe_Proizvodi" FromRole="Proizvodi" ToRole="Narudzbe" />
-          <NavigationProperty Name="Skladište" Relationship="Self.FK_Skladište_Proizvodi" FromRole="Proizvodi" ToRole="Skladište" />
-        </EntityType>
-        <EntityType Name="Skladište">
-          <Key>
-            <PropertyRef Name="ID_Skladista" />
-          </Key>
-          <Property Name="ID_Skladista" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ID_Proizvoda" Type="Int32" Nullable="false" />
-          <Property Name="Kolicina" Type="Int32" />
-          <NavigationProperty Name="Proizvodi" Relationship="Self.FK_Skladište_Proizvodi" FromRole="Skladište" ToRole="Proizvodi" />
+          <NavigationProperty Name="Skladiste" Relationship="WarehouseDBModel.FK_Skladiste_Proizvodi" FromRole="Proizvodi" ToRole="Skladiste" />
         </EntityType>
         <Association Name="FK_Narudzbe_Dostava">
           <End Role="Dostava" Type="Self.Dostava" Multiplicity="1" />
@@ -219,24 +209,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Skladište_Proizvodi">
-          <End Role="Proizvodi" Type="Self.Proizvodi" Multiplicity="1" />
-          <End Role="Skladište" Type="Self.Skladište" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Proizvodi">
-              <PropertyRef Name="ID_Proizvoda" />
-            </Principal>
-            <Dependent Role="Skladište">
-              <PropertyRef Name="ID_Proizvoda" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="WarehouseDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Dostava" EntityType="Self.Dostava" />
           <EntitySet Name="Kupci" EntityType="Self.Kupci" />
           <EntitySet Name="Narudzbe" EntityType="Self.Narudzbe" />
           <EntitySet Name="Proizvodi" EntityType="Self.Proizvodi" />
-          <EntitySet Name="Skladište" EntityType="Self.Skladište" />
           <AssociationSet Name="FK_Narudzbe_Dostava" Association="Self.FK_Narudzbe_Dostava">
             <End Role="Dostava" EntitySet="Dostava" />
             <End Role="Narudzbe" EntitySet="Narudzbe" />
@@ -249,11 +226,33 @@
             <End Role="Proizvodi" EntitySet="Proizvodi" />
             <End Role="Narudzbe" EntitySet="Narudzbe" />
           </AssociationSet>
-          <AssociationSet Name="FK_Skladište_Proizvodi" Association="Self.FK_Skladište_Proizvodi">
+          <EntitySet Name="Skladiste" EntityType="WarehouseDBModel.Skladiste" />
+          <AssociationSet Name="FK_Skladiste_Proizvodi" Association="WarehouseDBModel.FK_Skladiste_Proizvodi">
             <End Role="Proizvodi" EntitySet="Proizvodi" />
-            <End Role="Skladište" EntitySet="Skladište" />
+            <End Role="Skladiste" EntitySet="Skladiste" />
           </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Skladiste">
+          <Key>
+            <PropertyRef Name="ID_Skladiste" />
+          </Key>
+          <Property Name="ID_Skladiste" Type="Int32" Nullable="false" />
+          <Property Name="ID_Proizvoda" Type="Int32" Nullable="false" />
+          <Property Name="Kolicina" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Proizvodi" Relationship="WarehouseDBModel.FK_Skladiste_Proizvodi" FromRole="Skladiste" ToRole="Proizvodi" />
+        </EntityType>
+        <Association Name="FK_Skladiste_Proizvodi">
+          <End Type="WarehouseDBModel.Proizvodi" Role="Proizvodi" Multiplicity="1" />
+          <End Type="WarehouseDBModel.Skladiste" Role="Skladiste" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proizvodi">
+              <PropertyRef Name="ID_Proizvoda" />
+            </Principal>
+            <Dependent Role="Skladiste">
+              <PropertyRef Name="ID_Proizvoda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -303,12 +302,12 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Skladište">
-            <EntityTypeMapping TypeName="WarehouseDBModel.Skladište">
-              <MappingFragment StoreEntitySet="Skladište">
-                <ScalarProperty Name="ID_Skladista" ColumnName="ID_Skladista" />
-                <ScalarProperty Name="ID_Proizvoda" ColumnName="ID_Proizvoda" />
+          <EntitySetMapping Name="Skladiste">
+            <EntityTypeMapping TypeName="WarehouseDBModel.Skladiste">
+              <MappingFragment StoreEntitySet="Skladiste">
                 <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
+                <ScalarProperty Name="ID_Proizvoda" ColumnName="ID_Proizvoda" />
+                <ScalarProperty Name="ID_Skladiste" ColumnName="ID_Skladiste" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

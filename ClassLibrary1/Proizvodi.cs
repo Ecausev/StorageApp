@@ -18,7 +18,7 @@ namespace ClassLibrary1
         public Proizvodi()
         {
             this.Narudzbe = new HashSet<Narudzbe>();
-            this.Skladište = new HashSet<Skladište>();
+            this.Skladiste = new HashSet<Skladiste>();
         }
     
         public int ID_Proizvoda { get; set; }
@@ -31,6 +31,6 @@ namespace ClassLibrary1
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Narudzbe> Narudzbe { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Skladište> Skladište { get; set; }
+        public virtual ICollection<Skladiste> Skladiste { get; set; }
     }
 }

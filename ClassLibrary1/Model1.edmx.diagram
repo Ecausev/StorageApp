@@ -9,11 +9,11 @@
         <EntityTypeShape EntityType="WarehouseDBModel.Kupci" Width="1.5" PointX="0.75" PointY="9.375" IsExpanded="true" />
         <EntityTypeShape EntityType="WarehouseDBModel.Narudzbe" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
         <EntityTypeShape EntityType="WarehouseDBModel.Proizvodi" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="WarehouseDBModel.Skladište" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
         <AssociationConnector Association="WarehouseDBModel.FK_Narudzbe_Dostava" ManuallyRouted="false" />
         <AssociationConnector Association="WarehouseDBModel.FK_Narudzbe_Kupci" ManuallyRouted="false" />
         <AssociationConnector Association="WarehouseDBModel.FK_Narudzbe_Proizvodi" ManuallyRouted="false" />
-        <AssociationConnector Association="WarehouseDBModel.FK_Skladište_Proizvodi" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="WarehouseDBModel.Skladiste" Width="1.5" PointX="5.125" PointY="3.625" />
+        <AssociationConnector Association="WarehouseDBModel.FK_Skladiste_Proizvodi" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -12,11 +12,11 @@ namespace ClassLibrary1
     using System;
     using System.Collections.Generic;
     
-    public partial class Skladište
+    public partial class Skladiste
     {
-        public int ID_Skladista { get; set; }
+        public int ID_Skladiste { get; set; }
         public int ID_Proizvoda { get; set; }
-        public Nullable<int> Kolicina { get; set; }
+        public int Kolicina { get; set; }
     
         public virtual Proizvodi Proizvodi { get; set; }
     }
