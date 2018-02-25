@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Database;
+using ClassLibrary1;
 
 namespace StorageApp
 {
@@ -44,8 +44,8 @@ namespace StorageApp
             Int32.TryParse(Kolicina_Proiz_box.Text, out Kolicina_Proizvoda);
             Int32.TryParse(Cijena_Proiz_box.Text, out Cijena_Proizvoda);
             string Detalj_Proizvoda = Detalj_Proiz_box.Text;
-            
-            //DB.unosProizvoda(Naziv_Proizvoda, Velicina_Proizvoda, Spol_Proizvoda, Detalj_Proizvoda, Cijena_Proizvoda);
+            ProizvodDB DB = new ProizvodDB();
+            DB.unosProizvoda(Naziv_Proizvoda, Velicina_Proizvoda, Spol_Proizvoda, Detalj_Proizvoda, Cijena_Proizvoda);
         }
 
         private void Naziv_Proiz_Box_TextChanged(object sender, EventArgs e)
