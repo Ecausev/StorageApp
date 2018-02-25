@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6164015449084ef281f68e9c7dcc3374" Name="Diagram1">
+        <EntityTypeShape EntityType="WarehouseDBModel.Dostava" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WarehouseDBModel.Kupci" Width="1.5" PointX="0.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WarehouseDBModel.Narudzbe" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WarehouseDBModel.Proizvodi" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WarehouseDBModel.Skladište" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
+        <AssociationConnector Association="WarehouseDBModel.FK_Narudzbe_Dostava" ManuallyRouted="false" />
+        <AssociationConnector Association="WarehouseDBModel.FK_Narudzbe_Kupci" ManuallyRouted="false" />
+        <AssociationConnector Association="WarehouseDBModel.FK_Narudzbe_Proizvodi" ManuallyRouted="false" />
+        <AssociationConnector Association="WarehouseDBModel.FK_Skladište_Proizvodi" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
