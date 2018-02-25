@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.Naziv_Proiz_Box = new System.Windows.Forms.TextBox();
+            this.Velicina_Proiz_box = new System.Windows.Forms.TextBox();
+            this.Detalj_Proiz_box = new System.Windows.Forms.TextBox();
+            this.Kolicina_Proiz_box = new System.Windows.Forms.TextBox();
+            this.Cijena_Proiz_box = new System.Windows.Forms.TextBox();
+            this.Spol_btn_M = new System.Windows.Forms.RadioButton();
+            this.Spol_Btn_Z = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,66 +42,70 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Dodaj_Proiz_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // Naziv_Proiz_Box
             // 
-            this.textBox1.Location = new System.Drawing.Point(103, 21);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
+            this.Naziv_Proiz_Box.Location = new System.Drawing.Point(103, 21);
+            this.Naziv_Proiz_Box.Name = "Naziv_Proiz_Box";
+            this.Naziv_Proiz_Box.Size = new System.Drawing.Size(100, 20);
+            this.Naziv_Proiz_Box.TabIndex = 0;
+            this.Naziv_Proiz_Box.TextChanged += new System.EventHandler(this.Naziv_Proiz_Box_TextChanged);
             // 
-            // textBox2
+            // Velicina_Proiz_box
             // 
-            this.textBox2.Location = new System.Drawing.Point(103, 66);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.Velicina_Proiz_box.Location = new System.Drawing.Point(103, 66);
+            this.Velicina_Proiz_box.Name = "Velicina_Proiz_box";
+            this.Velicina_Proiz_box.Size = new System.Drawing.Size(100, 20);
+            this.Velicina_Proiz_box.TabIndex = 1;
+            this.Velicina_Proiz_box.TextChanged += new System.EventHandler(this.Velicina_Proiz_box_TextChanged);
             // 
-            // textBox3
+            // Detalj_Proiz_box
             // 
-            this.textBox3.Location = new System.Drawing.Point(103, 156);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 2;
+            this.Detalj_Proiz_box.Location = new System.Drawing.Point(103, 156);
+            this.Detalj_Proiz_box.Name = "Detalj_Proiz_box";
+            this.Detalj_Proiz_box.Size = new System.Drawing.Size(100, 20);
+            this.Detalj_Proiz_box.TabIndex = 2;
+            this.Detalj_Proiz_box.TextChanged += new System.EventHandler(this.Detalj_Proiz_box_TextChanged);
             // 
-            // textBox4
+            // Kolicina_Proiz_box
             // 
-            this.textBox4.Location = new System.Drawing.Point(103, 201);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 3;
+            this.Kolicina_Proiz_box.Location = new System.Drawing.Point(103, 201);
+            this.Kolicina_Proiz_box.Name = "Kolicina_Proiz_box";
+            this.Kolicina_Proiz_box.Size = new System.Drawing.Size(100, 20);
+            this.Kolicina_Proiz_box.TabIndex = 3;
+            this.Kolicina_Proiz_box.TextChanged += new System.EventHandler(this.Kolicina_Proiz_box_TextChanged);
             // 
-            // textBox5
+            // Cijena_Proiz_box
             // 
-            this.textBox5.Location = new System.Drawing.Point(103, 246);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 4;
+            this.Cijena_Proiz_box.Location = new System.Drawing.Point(103, 246);
+            this.Cijena_Proiz_box.Name = "Cijena_Proiz_box";
+            this.Cijena_Proiz_box.Size = new System.Drawing.Size(100, 20);
+            this.Cijena_Proiz_box.TabIndex = 4;
+            this.Cijena_Proiz_box.TextChanged += new System.EventHandler(this.Cijena_Proiz_box_TextChanged);
             // 
-            // radioButton1
+            // Spol_btn_M
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(103, 112);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(34, 17);
-            this.radioButton1.TabIndex = 6;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "M";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.Spol_btn_M.AutoSize = true;
+            this.Spol_btn_M.Location = new System.Drawing.Point(103, 112);
+            this.Spol_btn_M.Name = "Spol_btn_M";
+            this.Spol_btn_M.Size = new System.Drawing.Size(34, 17);
+            this.Spol_btn_M.TabIndex = 6;
+            this.Spol_btn_M.TabStop = true;
+            this.Spol_btn_M.Text = "M";
+            this.Spol_btn_M.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // Spol_Btn_Z
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(171, 112);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(32, 17);
-            this.radioButton2.TabIndex = 7;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Ž";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.Spol_Btn_Z.AutoSize = true;
+            this.Spol_Btn_Z.Location = new System.Drawing.Point(171, 112);
+            this.Spol_Btn_Z.Name = "Spol_Btn_Z";
+            this.Spol_Btn_Z.Size = new System.Drawing.Size(32, 17);
+            this.Spol_Btn_Z.TabIndex = 7;
+            this.Spol_Btn_Z.TabStop = true;
+            this.Spol_Btn_Z.Text = "Ž";
+            this.Spol_Btn_Z.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -166,20 +170,21 @@
             this.button1.Text = "Slika";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // Dodaj_Proiz_btn
             // 
-            this.button2.Location = new System.Drawing.Point(211, 285);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "Spremi";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Dodaj_Proiz_btn.Location = new System.Drawing.Point(211, 285);
+            this.Dodaj_Proiz_btn.Name = "Dodaj_Proiz_btn";
+            this.Dodaj_Proiz_btn.Size = new System.Drawing.Size(75, 23);
+            this.Dodaj_Proiz_btn.TabIndex = 15;
+            this.Dodaj_Proiz_btn.Text = "Spremi";
+            this.Dodaj_Proiz_btn.UseVisualStyleBackColor = true;
+            this.Dodaj_Proiz_btn.Click += new System.EventHandler(this.Dodaj_Proiz_btn_Click);
             // 
             // Skladiste_Dodaj
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.Dodaj_Proiz_btn);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -187,13 +192,13 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Spol_Btn_Z);
+            this.Controls.Add(this.Spol_btn_M);
+            this.Controls.Add(this.Cijena_Proiz_box);
+            this.Controls.Add(this.Kolicina_Proiz_box);
+            this.Controls.Add(this.Detalj_Proiz_box);
+            this.Controls.Add(this.Velicina_Proiz_box);
+            this.Controls.Add(this.Naziv_Proiz_Box);
             this.Name = "Skladiste_Dodaj";
             this.Size = new System.Drawing.Size(560, 376);
             this.ResumeLayout(false);
@@ -203,13 +208,13 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.TextBox Naziv_Proiz_Box;
+        private System.Windows.Forms.TextBox Velicina_Proiz_box;
+        private System.Windows.Forms.TextBox Detalj_Proiz_box;
+        private System.Windows.Forms.TextBox Kolicina_Proiz_box;
+        private System.Windows.Forms.TextBox Cijena_Proiz_box;
+        private System.Windows.Forms.RadioButton Spol_btn_M;
+        private System.Windows.Forms.RadioButton Spol_Btn_Z;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -217,6 +222,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Dodaj_Proiz_btn;
     }
 }
