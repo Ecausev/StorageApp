@@ -10,6 +10,7 @@ namespace ClassLibrary1
     public class ProizvodDB
     {
         public int Id_Proizvoda { get; set; }
+        public List<Proizvodi> listaProizvoda;
         public Proizvodi unosProizvoda(string naziv_P, int velicina_P, string spol_P, string detalj_P, int cijena_P, int kolicina_P)
         {
             Proizvodi proizvod = new Proizvodi();
@@ -38,8 +39,17 @@ namespace ClassLibrary1
             }
             return proizvod;
         }
-
-        public List<Proizvodi> GetAll()
+        public List<Proizvodi> GetProducts()
+        {
+            List<Proizvodi> proizvodi = new List<Proizvodi>();
+            
+            using (WarehouseDBEntities ctx = new WarehouseDBEntities())
+            {
+                listaProizvoda = ctx.Proizvodi.ToList();
+            }
+            return proizvodi;
+        }
+        /*public List<Proizvodi> GetAll()
         {
             List<Proizvodi> result = new List<Proizvodi>();
 
@@ -67,6 +77,6 @@ namespace ClassLibrary1
             });
 
             return result;
-        }
+        }*/
     }
 }

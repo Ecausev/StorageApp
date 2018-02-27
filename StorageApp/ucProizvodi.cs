@@ -23,12 +23,40 @@ namespace StorageApp
         {   get
             {
                 if (dataGridView1.SelectedRows.Count != 1)
+                {
                     return null;
+                }
+                    
 
                 return (Proizvodi)dataGridView1.SelectedRows[0].DataBoundItem;
             }
         }
 
+        public ucProizvodi()
+        {
+            InitializeComponent();
+
+            dataGridView1.DataSource = _proizvodiDb.Id_Proizvoda;
+        }
+
+        /// <summary>
+        /// prvi dio dizanja eventa u kontroli proizvodi.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dataGridView1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count == 1)
+            {
+                RaiseOnSelectProduct(); // prvi event 
+                RaiseOnProductSelected(SelectedProduct); //drugi event 
+            }
+        }
+
+        /// <summary>
+        /// provjerava da li je selektiran produkt
+        /// ako je, onda brise event argumente. ?
+        /// </summary>
         private void RaiseOnSelectProduct()
         {
             if(OnSelectProduct != null)
@@ -37,6 +65,10 @@ namespace StorageApp
             }
         }
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="product"></param>
         private void RaiseOnProductSelected(Proizvodi product)
         {
             if (OnProductSelected != null)
@@ -45,23 +77,6 @@ namespace StorageApp
                 {
                     SelectedProduct = product
                 });
-            }
-        }
-
-        public ucProizvodi()
-        {
-            InitializeComponent();
-            
-            dataGridView1.DataSource = _proizvodiDb.GetAll();
-        }
-        
-
-        private void dataGridView1_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            if (dataGridView1.SelectedRows.Count == 1)
-            {
-                RaiseOnSelectProduct();
-                RaiseOnProductSelected(SelectedProduct);
             }
         }
     }
