@@ -63,7 +63,14 @@
     <Compile Include="MainFrame.Designer.cs">
       <DependentUpon>MainFrame.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductSelectedEventArgs.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="ProizvodiSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProizvodiSelectForm.Designer.cs">
+      <DependentUpon>ProizvodiSelectForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Skladiste_Dodaj.cs">
       <SubType>UserControl</SubType>
@@ -101,6 +108,12 @@
     <Compile Include="Narudzbe_Kreiraj_Placanje.Designer.cs">
       <DependentUpon>Narudzbe_Kreiraj_Placanje.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucProizvodi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucProizvodi.Designer.cs">
+      <DependentUpon>ucProizvodi.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MainFrame.resx">
       <DependentUpon>MainFrame.cs</DependentUpon>
     </EmbeddedResource>
@@ -109,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Narudzbe_Kreiraj_Placanje.resx">
       <DependentUpon>Narudzbe_Kreiraj_Placanje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProizvodiSelectForm.resx">
+      <DependentUpon>ProizvodiSelectForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -124,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Skladiste_Trazi.resx">
       <DependentUpon>Skladiste_Trazi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucProizvodi.resx">
+      <DependentUpon>ucProizvodi.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

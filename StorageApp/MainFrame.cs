@@ -34,7 +34,6 @@ namespace StorageApp
             InitUc(UcType.Skladiste_dodaj, new Skladiste_Dodaj());
             InitUc(UcType.Skladiste_trazi, new Skladiste_Trazi());
 
-
         }
 
         private void Button1_Click(object sender, EventArgs e)

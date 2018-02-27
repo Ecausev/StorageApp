@@ -21,12 +21,52 @@ namespace ClassLibrary1
             proizvod.Cijena = cijena_P;
             proizvod.Qty = kolicina_P;
 
+            //ukoliko se dodaje isti proizvod s istim podacima, samo promjenimo qty za vrijednost qty-a.
+
+            //procistiti kod kao u sljedecem primjeru.
+            
+            //proizvod = new Proizvodi()
+            //{
+            //    Proizvod = naziv_P,
+            //    Velicina = velicina_P
+            //};
+
             using (WarehouseDBEntities ctx = new WarehouseDBEntities())
             {
                 proizvod = ctx.Proizvodi.Add(proizvod);
                 ctx.SaveChanges();
             }
             return proizvod;
+        }
+
+        public List<Proizvodi> GetAll()
+        {
+            List<Proizvodi> result = new List<Proizvodi>();
+
+            result.Add(new Proizvodi() {
+                Cijena = 20,
+                Detalj = "Proizvod 1"
+            });
+
+            result.Add(new Proizvodi()
+            {
+                Cijena = 20,
+                Detalj = "Proizvod 4"
+            });
+
+            result.Add(new Proizvodi()
+            {
+                Cijena = 20,
+                Detalj = "Proizvod 2"
+            });
+
+            result.Add(new Proizvodi()
+            {
+                Cijena = 30,
+                Detalj = "Proizvod 5"
+            });
+
+            return result;
         }
     }
 }

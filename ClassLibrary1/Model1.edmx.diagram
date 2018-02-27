@@ -5,9 +5,9 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="cdce55c47d1148a8bd528cce526a5035" Name="Diagram1">
-        <EntityTypeShape EntityType="WarehouseDBModel.Dostava" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="WarehouseDBModel.Kupci" Width="1.5" PointX="0.75" PointY="9.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="WarehouseDBModel.Narudzbe" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WarehouseDBModel.Dostava" Width="1.5" PointX="4.5" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WarehouseDBModel.Kupci" Width="1.5" PointX="7.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WarehouseDBModel.Narudzbe" Width="1.5" PointX="4.5" PointY="2.125" IsExpanded="true" />
         <EntityTypeShape EntityType="WarehouseDBModel.Proizvodi" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
         <AssociationConnector Association="WarehouseDBModel.FK_Narudzbe_Dostava" ManuallyRouted="false" />
         <AssociationConnector Association="WarehouseDBModel.FK_Narudzbe_Kupci" ManuallyRouted="false" />

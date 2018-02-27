@@ -36,5 +36,21 @@ namespace StorageApp
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ProizvodiSelectForm frm = new ProizvodiSelectForm();
+            
+
+            if(frm.ShowDialog() == DialogResult.OK)
+            {
+                listView1.Items.Add(frm.SelectedProduct.Detalj);
+            }
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //list narudzba add item
+        }
     }
 }

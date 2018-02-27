@@ -82,14 +82,14 @@
             // dodajToolStripMenuItem
             // 
             this.dodajToolStripMenuItem.Name = "dodajToolStripMenuItem";
-            this.dodajToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.dodajToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
             this.dodajToolStripMenuItem.Text = "Dodaj";
             this.dodajToolStripMenuItem.Click += new System.EventHandler(this.dodajToolStripMenuItem_Click);
             // 
             // izbrisiToolStripMenuItem
             // 
             this.izbrisiToolStripMenuItem.Name = "izbrisiToolStripMenuItem";
-            this.izbrisiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.izbrisiToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
             this.izbrisiToolStripMenuItem.Text = "Traži";
             this.izbrisiToolStripMenuItem.Click += new System.EventHandler(this.izbrisiToolStripMenuItem_Click);
             // 
@@ -106,7 +106,7 @@
             // noveToolStripMenuItem
             // 
             this.noveToolStripMenuItem.Name = "noveToolStripMenuItem";
-            this.noveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.noveToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.noveToolStripMenuItem.Text = "Kreiraj";
             this.noveToolStripMenuItem.Click += new System.EventHandler(this.noveToolStripMenuItem_Click);
             // 
@@ -115,20 +115,20 @@
             this.stareToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dodajToolStripMenuItem1});
             this.stareToolStripMenuItem.Name = "stareToolStripMenuItem";
-            this.stareToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.stareToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.stareToolStripMenuItem.Text = "Kupci";
             // 
             // dodajToolStripMenuItem1
             // 
             this.dodajToolStripMenuItem1.Name = "dodajToolStripMenuItem1";
-            this.dodajToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.dodajToolStripMenuItem1.Size = new System.Drawing.Size(118, 22);
             this.dodajToolStripMenuItem1.Text = "Pretraga";
             this.dodajToolStripMenuItem1.Click += new System.EventHandler(this.dodajToolStripMenuItem1_Click);
             // 
             // prodanoToolStripMenuItem
             // 
             this.prodanoToolStripMenuItem.Name = "prodanoToolStripMenuItem";
-            this.prodanoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.prodanoToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.prodanoToolStripMenuItem.Text = "Prodano";
             this.prodanoToolStripMenuItem.Click += new System.EventHandler(this.prodanoToolStripMenuItem_Click);
             // 

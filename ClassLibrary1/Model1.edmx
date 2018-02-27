@@ -21,7 +21,7 @@
           <Property Name="Prezime" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Adresa" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Mjesto" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Poštanski_Broj" Type="int" Nullable="false" />
+          <Property Name="Postanski_Broj" Type="int" Nullable="false" />
           <Property Name="Kontakt" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Narudzbe">
@@ -120,9 +120,9 @@
           <Property Name="Prezime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Adresa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Mjesto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Poštanski_Broj" Type="Int32" Nullable="false" />
-          <Property Name="Kontakt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Kontakt" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="Narudzbe" Relationship="Self.FK_Narudzbe_Kupci" FromRole="Kupci" ToRole="Narudzbe" />
+          <Property Name="Postanski_Broj" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Narudzbe">
           <Key>
@@ -220,12 +220,12 @@
           <EntitySetMapping Name="Kupci">
             <EntityTypeMapping TypeName="WarehouseDBModel.Kupci">
               <MappingFragment StoreEntitySet="Kupci">
+                <ScalarProperty Name="Postanski_Broj" ColumnName="Postanski_Broj" />
                 <ScalarProperty Name="ID_Kupca" ColumnName="ID_Kupca" />
                 <ScalarProperty Name="Ime" ColumnName="Ime" />
                 <ScalarProperty Name="Prezime" ColumnName="Prezime" />
                 <ScalarProperty Name="Adresa" ColumnName="Adresa" />
                 <ScalarProperty Name="Mjesto" ColumnName="Mjesto" />
-                <ScalarProperty Name="Poštanski_Broj" ColumnName="Poštanski_Broj" />
                 <ScalarProperty Name="Kontakt" ColumnName="Kontakt" />
               </MappingFragment>
             </EntityTypeMapping>

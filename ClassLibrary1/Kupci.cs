@@ -25,8 +25,8 @@ namespace ClassLibrary1
         public string Prezime { get; set; }
         public string Adresa { get; set; }
         public string Mjesto { get; set; }
-        public int Poštanski_Broj { get; set; }
         public string Kontakt { get; set; }
+        public int Postanski_Broj { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Narudzbe> Narudzbe { get; set; }
