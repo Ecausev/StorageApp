@@ -43,14 +43,7 @@
           <Property Name="Spol" Type="varchar" MaxLength="1" Nullable="false" />
           <Property Name="Detalj" Type="varchar" MaxLength="50" />
           <Property Name="Cijena" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Skladiste">
-          <Key>
-            <PropertyRef Name="ID_Skladiste" />
-          </Key>
-          <Property Name="ID_Skladiste" Type="int" Nullable="false" />
-          <Property Name="ID_Proizvoda" Type="int" Nullable="false" />
-          <Property Name="Kolicina" Type="int" Nullable="false" />
+          <Property Name="Qty" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_Narudzbe_Dostava">
           <End Role="Dostava" Type="Self.Dostava" Multiplicity="1" />
@@ -88,24 +81,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Skladiste_Proizvodi">
-          <End Role="Proizvodi" Type="Self.Proizvodi" Multiplicity="1" />
-          <End Role="Skladiste" Type="Self.Skladiste" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Proizvodi">
-              <PropertyRef Name="ID_Proizvoda" />
-            </Principal>
-            <Dependent Role="Skladiste">
-              <PropertyRef Name="ID_Proizvoda" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="WarehouseDBModelStoreContainer">
           <EntitySet Name="Dostava" EntityType="Self.Dostava" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Kupci" EntityType="Self.Kupci" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Narudzbe" EntityType="Self.Narudzbe" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Proizvodi" EntityType="Self.Proizvodi" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Skladiste" EntityType="Self.Skladiste" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Narudzbe_Dostava" Association="Self.FK_Narudzbe_Dostava">
             <End Role="Dostava" EntitySet="Dostava" />
             <End Role="Narudzbe" EntitySet="Narudzbe" />
@@ -117,10 +97,6 @@
           <AssociationSet Name="FK_Narudzbe_Proizvodi" Association="Self.FK_Narudzbe_Proizvodi">
             <End Role="Proizvodi" EntitySet="Proizvodi" />
             <End Role="Narudzbe" EntitySet="Narudzbe" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Skladiste_Proizvodi" Association="Self.FK_Skladiste_Proizvodi">
-            <End Role="Proizvodi" EntitySet="Proizvodi" />
-            <End Role="Skladiste" EntitySet="Skladiste" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -171,7 +147,7 @@
           <Property Name="Detalj" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Cijena" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Narudzbe" Relationship="Self.FK_Narudzbe_Proizvodi" FromRole="Proizvodi" ToRole="Narudzbe" />
-          <NavigationProperty Name="Skladiste" Relationship="WarehouseDBModel.FK_Skladiste_Proizvodi" FromRole="Proizvodi" ToRole="Skladiste" />
+          <Property Name="Qty" Type="Int32" Nullable="false" />
         </EntityType>
         <Association Name="FK_Narudzbe_Dostava">
           <End Role="Dostava" Type="Self.Dostava" Multiplicity="1" />
@@ -226,33 +202,7 @@
             <End Role="Proizvodi" EntitySet="Proizvodi" />
             <End Role="Narudzbe" EntitySet="Narudzbe" />
           </AssociationSet>
-          <EntitySet Name="Skladiste" EntityType="WarehouseDBModel.Skladiste" />
-          <AssociationSet Name="FK_Skladiste_Proizvodi" Association="WarehouseDBModel.FK_Skladiste_Proizvodi">
-            <End Role="Proizvodi" EntitySet="Proizvodi" />
-            <End Role="Skladiste" EntitySet="Skladiste" />
-          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="Skladiste">
-          <Key>
-            <PropertyRef Name="ID_Skladiste" />
-          </Key>
-          <Property Name="ID_Skladiste" Type="Int32" Nullable="false" />
-          <Property Name="ID_Proizvoda" Type="Int32" Nullable="false" />
-          <Property Name="Kolicina" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Proizvodi" Relationship="WarehouseDBModel.FK_Skladiste_Proizvodi" FromRole="Skladiste" ToRole="Proizvodi" />
-        </EntityType>
-        <Association Name="FK_Skladiste_Proizvodi">
-          <End Type="WarehouseDBModel.Proizvodi" Role="Proizvodi" Multiplicity="1" />
-          <End Type="WarehouseDBModel.Skladiste" Role="Skladiste" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Proizvodi">
-              <PropertyRef Name="ID_Proizvoda" />
-            </Principal>
-            <Dependent Role="Skladiste">
-              <PropertyRef Name="ID_Proizvoda" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -293,21 +243,13 @@
           <EntitySetMapping Name="Proizvodi">
             <EntityTypeMapping TypeName="WarehouseDBModel.Proizvodi">
               <MappingFragment StoreEntitySet="Proizvodi">
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
                 <ScalarProperty Name="ID_Proizvoda" ColumnName="ID_Proizvoda" />
                 <ScalarProperty Name="Proizvod" ColumnName="Proizvod" />
                 <ScalarProperty Name="Velicina" ColumnName="Velicina" />
                 <ScalarProperty Name="Spol" ColumnName="Spol" />
                 <ScalarProperty Name="Detalj" ColumnName="Detalj" />
                 <ScalarProperty Name="Cijena" ColumnName="Cijena" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Skladiste">
-            <EntityTypeMapping TypeName="WarehouseDBModel.Skladiste">
-              <MappingFragment StoreEntitySet="Skladiste">
-                <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
-                <ScalarProperty Name="ID_Proizvoda" ColumnName="ID_Proizvoda" />
-                <ScalarProperty Name="ID_Skladiste" ColumnName="ID_Skladiste" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

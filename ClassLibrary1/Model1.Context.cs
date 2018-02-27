@@ -29,6 +29,5 @@ namespace ClassLibrary1
         public virtual DbSet<Kupci> Kupci { get; set; }
         public virtual DbSet<Narudzbe> Narudzbe { get; set; }
         public virtual DbSet<Proizvodi> Proizvodi { get; set; }
-        public virtual DbSet<Skladiste> Skladiste { get; set; }
     }
 }

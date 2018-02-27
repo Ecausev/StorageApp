@@ -12,8 +12,6 @@
         <AssociationConnector Association="WarehouseDBModel.FK_Narudzbe_Dostava" ManuallyRouted="false" />
         <AssociationConnector Association="WarehouseDBModel.FK_Narudzbe_Kupci" ManuallyRouted="false" />
         <AssociationConnector Association="WarehouseDBModel.FK_Narudzbe_Proizvodi" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="WarehouseDBModel.Skladiste" Width="1.5" PointX="5.125" PointY="3.625" />
-        <AssociationConnector Association="WarehouseDBModel.FK_Skladiste_Proizvodi" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
