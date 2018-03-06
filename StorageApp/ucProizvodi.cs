@@ -28,15 +28,18 @@ namespace StorageApp
                 }
                     
 
-                return (Proizvodi)dataGridView1.SelectedRows[0].DataBoundItem;
+                return (Proizvodi)dataGridView1.SelectedRows[0].Tag;
             }
         }
 
         public ucProizvodi()
         {
             InitializeComponent();
+            //_proizvodiDb.GetProducts();
+            //SetData(_proizvodiDb.listaProizvoda);
+            
 
-            dataGridView1.DataSource = _proizvodiDb.Id_Proizvoda;
+            
         }
 
         /// <summary>
@@ -77,6 +80,47 @@ namespace StorageApp
                 {
                     SelectedProduct = product
                 });
+            }
+        }
+
+        public void SearchData(List<Proizvodi> data)
+        {
+
+            dataGridView1.Rows.Clear();
+
+        }
+
+        public void SetData(List<Proizvodi> data)
+        {
+            dataGridView1.Rows.Clear();
+
+            foreach(var item in data)
+            {
+                int rowIndex = dataGridView1.Rows.Add(item.Proizvod, item.Velicina, item.Detalj);
+                dataGridView1.Rows[rowIndex].Tag = item;                
+            }
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            Text = textBox1.Text;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var input = textBox1.Text;
+            if (Name_rbtn.Checked)
+            {
+               _proizvodiDb.proizvod  = true;
+            }
+            if (Size_rbtn.Checked)
+            {
+                _proizvodiDb.velicina = true;
+            }
+            if (_proizvodiDb.proizvod == true || _proizvodiDb.velicina == true)
+            {
+                //izvrsi metodu 
             }
         }
     }

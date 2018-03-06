@@ -10,7 +10,9 @@ namespace ClassLibrary1
     public class ProizvodDB
     {
         public int Id_Proizvoda { get; set; }
-        public List<Proizvodi> listaProizvoda;
+        public bool proizvod { get; set; }
+        public bool velicina { get; set; }
+
         public Proizvodi unosProizvoda(string naziv_P, int velicina_P, string spol_P, string detalj_P, int cijena_P, int kolicina_P)
         {
             Proizvodi proizvod = new Proizvodi();
@@ -45,38 +47,24 @@ namespace ClassLibrary1
             
             using (WarehouseDBEntities ctx = new WarehouseDBEntities())
             {
-                listaProizvoda = ctx.Proizvodi.ToList();
+                proizvodi = ctx.Proizvodi.ToList();
             }
             return proizvodi;
         }
-        /*public List<Proizvodi> GetAll()
-        {
-            List<Proizvodi> result = new List<Proizvodi>();
 
-            result.Add(new Proizvodi() {
-                Cijena = 20,
-                Detalj = "Proizvod 1"
-            });
-
-            result.Add(new Proizvodi()
-            {
-                Cijena = 20,
-                Detalj = "Proizvod 4"
-            });
-
-            result.Add(new Proizvodi()
-            {
-                Cijena = 20,
-                Detalj = "Proizvod 2"
-            });
-
-            result.Add(new Proizvodi()
-            {
-                Cijena = 30,
-                Detalj = "Proizvod 5"
-            });
-
-            return result;
-        }*/
+        //public List<Proizvodi> FilteredList()
+        //{
+        //    List<Proizvodi> proizvodi = new List<Proizvodi>();
+        //    using (WarehouseDBEntities ctx = new WarehouseDBEntities())
+        //    {
+        //        if (proizvod == true)
+        //        {
+        //            var test = 2;
+        //            proizvod = ctx.Proizvodi.Select(x => x.Velicina.Contains(test));
+        //        }
+        //        proizvodi = ctx.tol
+        //    }
+        //}
+        
     }
 }

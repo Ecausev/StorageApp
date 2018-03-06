@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ClassLibrary1;
 
 namespace StorageApp
 {
     public partial class Narudzbe_Kreiraj_Placanje : UserControl
     {
+
+        private ProizvodDB _proizvodiDb = new ProizvodDB();
+
         public Narudzbe_Kreiraj_Placanje()
         {
             InitializeComponent();
@@ -40,6 +44,7 @@ namespace StorageApp
         private void button1_Click(object sender, EventArgs e)
         {
             ProizvodiSelectForm frm = new ProizvodiSelectForm();
+            frm.SetData(_proizvodiDb.GetProducts());
             
 
             if(frm.ShowDialog() == DialogResult.OK)

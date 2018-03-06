@@ -13,12 +13,15 @@ namespace StorageApp
 {
     public partial class ProizvodiSelectForm : Form
     {
+        private ProizvodDB _proizvodiDb = new ProizvodDB();
+
 
         public Proizvodi SelectedProduct { get; set; }
 
         public ProizvodiSelectForm()
         {
-            InitializeComponent();            
+
+            InitializeComponent();
         }
                
 
@@ -38,6 +41,12 @@ namespace StorageApp
         {
             SelectedProduct = e.SelectedProduct;
             DialogResult = DialogResult.OK;
+        }
+
+        public void SetData(List<Proizvodi> data)
+        {
+
+            ucProizvodi1.SetData(data);
         }
     }
 }
