@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary1
 {
-   
+
     public class ProizvodDB
     {
         public int Id_Proizvoda { get; set; }
         public bool proizvod { get; set; }
         public bool velicina { get; set; }
+        public List<Proizvodi> filteredList { get; private set; }
 
         public Proizvodi unosProizvoda(string naziv_P, int velicina_P, string spol_P, string detalj_P, int cijena_P, int kolicina_P)
         {
@@ -27,7 +28,7 @@ namespace ClassLibrary1
             //ukoliko se dodaje isti proizvod s istim podacima, samo promjenimo qty za vrijednost qty-a.
 
             //procistiti kod kao u sljedecem primjeru.
-            
+
             //proizvod = new Proizvodi()
             //{
             //    Proizvod = naziv_P,
@@ -44,7 +45,7 @@ namespace ClassLibrary1
         public List<Proizvodi> GetProducts()
         {
             List<Proizvodi> proizvodi = new List<Proizvodi>();
-            
+
             using (WarehouseDBEntities ctx = new WarehouseDBEntities())
             {
                 proizvodi = ctx.Proizvodi.ToList();
@@ -52,19 +53,57 @@ namespace ClassLibrary1
             return proizvodi;
         }
 
-        //public List<Proizvodi> FilteredList()
-        //{
-        //    List<Proizvodi> proizvodi = new List<Proizvodi>();
-        //    using (WarehouseDBEntities ctx = new WarehouseDBEntities())
-        //    {
-        //        if (proizvod == true)
-        //        {
-        //            var test = 2;
-        //            proizvod = ctx.Proizvodi.Select(x => x.Velicina.Contains(test));
-        //        }
-        //        proizvodi = ctx.tol
-        //    }
-        //}
-        
+        public void FilteredList(string inputText)
+        {
+
+            if (proizvod == true)
+            {
+                List<Proizvodi> proizvodi = new List<Proizvodi>();
+
+                using (WarehouseDBEntities ctx = new WarehouseDBEntities())
+                {
+                    proizvodi = ctx.Proizvodi.ToList();
+                    foreach (var i in proizvodi)
+                    {
+                        if (i.Proizvod.Contains(inputText))
+                        {
+                            filteredList.Add(i);
+                        }
+
+                    }
+
+                    // foreach select id, check if it contains, add to new list that item by id
+                }
+            }
+            if (velicina == true)
+            {
+                int inputVelicina = 0;
+                Int32.TryParse(inputText, out inputVelicina);
+
+                List<Proizvodi> proizvodi = new List<Proizvodi>();
+
+                using (WarehouseDBEntities ctx = new WarehouseDBEntities())
+                {
+                   
+                    proizvodi = ctx.Proizvodi.ToList();
+                    foreach (var i in proizvodi)
+                    {
+                        if (inputVelicina != 0)
+                        {
+                            filteredList.Add(i);
+                        }
+
+                    }
+
+                    // foreach select id, check if it contains, add to new list that item by id
+                }
+                foreach (var item in filteredList)
+                {
+                    Console.WriteLine($"{ item.ID_Proizvoda} { item.Proizvod}");
+                }
+                
+            }
+        }
     }
 }
+                

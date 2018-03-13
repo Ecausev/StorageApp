@@ -120,7 +120,7 @@ namespace StorageApp
             }
             if (_proizvodiDb.proizvod == true || _proizvodiDb.velicina == true)
             {
-                //izvrsi metodu 
+                _proizvodiDb.FilteredList(input);
             }
         }
     }

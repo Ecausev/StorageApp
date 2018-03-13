@@ -49,7 +49,7 @@ namespace StorageApp
 
             if(frm.ShowDialog() == DialogResult.OK)
             {
-                listView1.Items.Add(frm.SelectedProduct.Detalj);
+                listView1.Items.Add(frm.SelectedProduct.Proizvod);
             }
         }
 
